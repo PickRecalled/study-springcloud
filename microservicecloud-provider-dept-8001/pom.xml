@@ -17,6 +17,16 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.pickrecalled</groupId>
+			<artifactId>microservicecloud-dao</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pickrecalled</groupId>
+			<artifactId>microservicecloud-facade</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
