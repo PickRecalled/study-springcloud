@@ -29,7 +29,7 @@
 	<insert id="insert" parameterType="com.pickrecalled.entity.Dept">
 		insert into t_dept (deptno, dname, db_source
 		)
-		values (#{deptno,jdbcType=BIGINT}, #{dname,jdbcType=VARCHAR}, #{dbSource,jdbcType=VARCHAR}
+		values (#{deptno,jdbcType=BIGINT}, #{dname,jdbcType=VARCHAR}, DATABASE()
 		)
 	</insert>
 	<insert id="insertSelective" parameterType="com.pickrecalled.entity.Dept">
