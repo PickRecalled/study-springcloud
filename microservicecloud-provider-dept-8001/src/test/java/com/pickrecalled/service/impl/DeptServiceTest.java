@@ -11,11 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.pickrecalled.DeptService;
-import com.pickrecalled.ProviderApplication;
+import com.pickrecalled.ProviderApplication8001;
 import com.pickrecalled.entity.Dept;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ProviderApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = ProviderApplication8001.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DeptServiceTest {
 
 	private static Logger logger = LoggerFactory.getLogger(DeptServiceTest.class.getName());
