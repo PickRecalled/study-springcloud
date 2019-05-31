@@ -3,6 +3,8 @@ package com.pickrecalled.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,9 @@ public class DeptController {
 	@Autowired
 	private DeptService deptService;
 
+	@Autowired
+	private DiscoveryClient discoveryClient;
+
 	@RequestMapping(value = "/dept/add", method = { RequestMethod.POST, RequestMethod.GET })
 	public Boolean add(Dept dept) {
 		return deptService.add(dept);
@@ -35,6 +40,21 @@ public class DeptController {
 	@GetMapping(value = "/dept/list")
 	public List<Dept> list() {
 		return deptService.list();
+	}
+
+	@GetMapping(value = "/dept/discovery")
+	public Object discovery() {
+		// 获取微服务列表清单
+		List<String> list = discoveryClient.getServices();
+		System.out.println("-----discoveryClient.getServices-----:" + list);
+		// 从获取微服务列表清单当中找到MICROSERVICECLOUD-PROVIDER-DEPT-8001这个微服务
+		// MICROSERVICECLOUD-PROVIDER-DEPT-8001 从application.yml当中的spring.application.name获取
+		List<ServiceInstance> srvList = discoveryClient.getInstances("MICROSERVICECLOUD-PROVIDER-DEPT-8001");
+		for (ServiceInstance element : srvList) {
+			// 输出对应微服务的信息
+			System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t" + element.getUri());
+		}
+		return this.discoveryClient;
 	}
 
 }
