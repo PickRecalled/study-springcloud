@@ -10,6 +10,11 @@
 	<artifactId>microservicecloud-provider-dept-8001</artifactId>
 
 	<dependencies>
+		<!-- 完善微服务info信息组件 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<!--将微服务provider侧注册进eureka  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
