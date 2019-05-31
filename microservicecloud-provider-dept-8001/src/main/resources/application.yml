@@ -1,4 +1,4 @@
-debug: true
+debug: false
 
 server:
   port: 8001
@@ -13,6 +13,8 @@ mybatis:
   - classpath*:mapper/**/*.xml
   
 spring:
+  application:
+    name: microservicecloud-provider-dept-8001
   datasource:
     # 当前数据源操作类型 
     type: com.alibaba.druid.pool.DruidDataSource
@@ -31,4 +33,10 @@ spring:
       max-total: 5
       # 等待连接获取的最大超时时间
       max-wait-millis: 200
-    
+
+
+eureka:
+  # 客户端注册进eureka服务列表内
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
