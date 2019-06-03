@@ -22,7 +22,7 @@ public class DeptController {
 
 	// provider服务提供端的URL
 	// private static final String REST_URL_PREFIX = "http://127.0.0.1:8001";
-	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-PROVIDER-DEPT-8001";
+	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-PROVIDER-DEPT";
 
 	@RequestMapping(value = "/consumer/dept/add", method = { RequestMethod.POST, RequestMethod.GET })
 	public Boolean add(@RequestBody Dept dept) {
