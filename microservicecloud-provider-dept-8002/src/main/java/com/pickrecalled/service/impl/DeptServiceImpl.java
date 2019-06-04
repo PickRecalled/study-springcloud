@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pickrecalled.DeptService;
 import com.pickrecalled.dao.DeptMapper;
 import com.pickrecalled.entity.Dept;
+import com.pickrecalled.facade.DeptService;
 
 @Service
 public class DeptServiceImpl implements DeptService {

@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.pickrecalled.DeptService;
 import com.pickrecalled.ProviderApplication8001;
 import com.pickrecalled.entity.Dept;
+import com.pickrecalled.facade.DeptService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ProviderApplication8001.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

@@ -10,6 +10,12 @@
 	<artifactId>microservicecloud-api</artifactId>
 
 	<dependencies>
+		<!-- feign相关 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
+		</dependency>
+		<!-- lombok小辣椒 -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
