@@ -1,6 +1,11 @@
 server:
   port: 8080
-  
+
+feign: 
+  # 提示找不到feign属性，不影响服务
+  hystrix: 
+    enabled: true
+
 eureka: 
  client: 
   register-with-eureka: false 

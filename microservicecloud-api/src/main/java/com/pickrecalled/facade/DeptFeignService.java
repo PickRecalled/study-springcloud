@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.pickrecalled.entity.Dept;
 
-@FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT")
+/**
+ * Dept Feign负载均衡服务
+ * @author PickRecalled
+ */
+// @FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT")//Feign面向服务接口，调用微服务
+@FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT", fallbackFactory = DeptFeignServiceFallbackFactory.class)
 public interface DeptFeignService {
 
-	@RequestMapping(value = "/dept/get{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
 	public Dept get(@PathVariable("id") Long id);
 
 	@RequestMapping(value = "/dept/list", method = RequestMethod.GET)
