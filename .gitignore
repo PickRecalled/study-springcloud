@@ -2,7 +2,10 @@
 /target/
 /.idea/
 *.iml
-*.log
+*.log*
+*.logs*
+*/log/*
+*/logs/*
 .springBeans
 /.settings/
 .classpath

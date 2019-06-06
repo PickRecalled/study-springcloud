@@ -10,7 +10,7 @@
 	<artifactId>microservicecloud-provider-dept-8003</artifactId>
 
 	<dependencies>
-		<!-- 完善微服务info信息组件 -->
+		<!-- 完善微服务info信息组件与actuator监控信息 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
