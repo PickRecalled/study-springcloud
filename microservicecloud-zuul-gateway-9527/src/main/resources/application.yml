@@ -16,6 +16,21 @@ eureka:
     instance-id: MicroservicecloudZuulGateway9527
     prefer-ip-address: true
     
+zuul: 
+  # 统一公共前缀
+  prefix: /pickrecalled
+  # 原真实服务名忽略
+  # ignored-services: microservicecloud-provider-dept
+  # 使用*的方式
+  ignored-services: "*"
+  # 服务名映射
+  routes: 
+    # 隐藏真实服务名
+    mydept.serviceId: microservicecloud-provider-dept
+    # 展示服务名
+    mydept.path: /provider-dept/**
+
+    
 # 微服务info内容详细信息    
 info: 
   app.name: study-springcloud
